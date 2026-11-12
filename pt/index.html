@@ -4,11 +4,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ORXU — Portfólio de Produtos de Software</title>
-  <meta name="description" content="ORXU é uma marca independente de portfólio de produtos de software.">
-  <!-- Placeholder: implementação completa do site pendente -->
+  <meta name="description" content="ORXU é uma marca independente de portfólio de produtos de software. Conheça Korvex, Maps Leads Finder e BOWIS.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="ORXU — Portfólio de Produtos de Software">
+  <meta property="og:description" content="Marca independente de portfólio de produtos de software.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../assets/logo/orxu-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>ORXU</h1>
-  <p>Website institucional oficial — versão em português (placeholder).</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/pt/" class="logo-link" aria-label="ORXU início">
+        <img src="../assets/logo/orxu-mark.svg" alt="" class="logo-mark" width="28" height="35">
+        <span class="logo-text">ORXU</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Principal">
+        <a href="/pt/" aria-current="page">Início</a>
+        <a href="/pt/produtos/">Produtos</a>
+        <a href="/pt/sobre/">Sobre</a>
+        <a href="/pt/contacto/">Contacto</a>
+        <div class="lang-switch" aria-label="Idioma">
+          <a href="/en/" lang="en">EN</a>
+          <a href="/pt/" aria-current="true" lang="pt">PT</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+    <a href="/pt/" aria-current="page">Início</a>
+    <a href="/pt/produtos/">Produtos</a>
+    <a href="/pt/sobre/">Sobre</a>
+    <a href="/pt/contacto/">Contacto</a>
+    <div class="lang-switch">
+      <a href="/en/" lang="en">English</a>
+      <a href="/pt/" aria-current="true" lang="pt">Português</a>
+    </div>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero__label">Portfólio de Produtos de Software</p>
+        <h1 class="hero__title">Produtos de software independentes com propósito claro.</h1>
+        <p class="hero__lead">A ORXU é a casa institucional de um conjunto de produtos de software especializados. Cada produto mantém a sua própria identidade, direção e estratégia comercial.</p>
+        <div class="hero__actions">
+          <a href="/pt/produtos/" class="btn btn--primary">Ver produtos</a>
+          <a href="/pt/sobre/" class="btn btn--secondary">Sobre a ORXU</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <h2 id="portfolio-heading" class="visually-hidden">Portfólio de produtos</h2>
+        <article class="product-block">
+          <div>
+            <p class="product-block__meta">Automação WhatsApp</p>
+            <h3 class="product-block__title">Korvex</h3>
+            <p class="product-block__desc">Software focado em fluxos de automação visual, gestão de conversas e integração com WhatsApp, com funcionalidade assistida por IA e modelo de utilização baseado em tokens.</p>
+            <span class="product-block__status">Em desenvolvimento</span>
+            <div class="product-block__actions">
+              <a href="/pt/produtos/korvex/" class="btn btn--secondary">Saber mais</a>
+              <a href="https://korvex-8.polsia.io" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Site do produto ↗</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-muted" style="font-size: var(--text-sm); max-width: 28rem;">O Korvex está a ser desenvolvido como uma ferramenta prática para equipas que precisam de automação estruturada em torno de conversas no WhatsApp. As capacidades estão a evoluir; nem todas as funcionalidades planeadas estão disponíveis.</p>
+          </div>
+        </article>
+        <article class="product-block product-block--reverse">
+          <div>
+            <p class="product-block__meta">Pesquisa de Leads</p>
+            <h3 class="product-block__title">Maps Leads Finder</h3>
+            <p class="product-block__desc">Produto de prospeção de negócios para descobrir e organizar informação empresarial por categoria e localização, com filtragem, múltiplas fontes de dados e gestão de duplicados.</p>
+            <span class="product-block__status">Em desenvolvimento</span>
+            <div class="product-block__actions">
+              <a href="/pt/produtos/maps-leads-finder/" class="btn btn--secondary">Saber mais</a>
+              <a href="https://maps-leads-finder-saas.onrender.com" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Site do produto ↗</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-muted" style="font-size: var(--text-sm); max-width: 28rem;">O Maps Leads Finder destina-se a profissionais e equipas que precisam de pesquisa de leads estruturada. O produto continua em desenvolvimento e não é apresentado como uma plataforma comercial totalmente lançada.</p>
+          </div>
+        </article>
+        <article class="product-block">
+          <div>
+            <p class="product-block__meta">Ponto de Venda e Gestão Comercial</p>
+            <h3 class="product-block__title">BOWIS</h3>
+            <p class="product-block__desc">Produto orientado para gestão de vendas, registos de produtos e clientes, operações comerciais e relatórios.</p>
+            <span class="product-block__status">Desenvolvimento inicial</span>
+            <div class="product-block__actions">
+              <a href="/pt/produtos/bowis/" class="btn btn--secondary">Saber mais</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-muted" style="font-size: var(--text-sm); max-width: 28rem;">O BOWIS encontra-se numa fase inicial de desenvolvimento. Ainda não foi publicado um site externo do produto.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section section--muted">
+      <div class="container">
+        <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Contacto institucional</h2>
+        <p class="text-muted" style="max-width: 36rem; margin-bottom: var(--space-6);">Para questões relacionadas com o portfólio ORXU ou os seus produtos, pode contactar-nos por email.</p>
+        <a href="/pt/contacto/" class="btn btn--primary">Contacto</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/pt/" class="logo-link">
+            <img src="../assets/logo/orxu-mark.svg" alt="" class="logo-mark" width="24" height="30">
+            <span class="logo-text">ORXU</span>
+          </a>
+          <p>Marca independente de portfólio de produtos de software.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegar</h4>
+          <ul>
+            <li><a href="/pt/">Início</a></li>
+            <li><a href="/pt/produtos/">Produtos</a></li>
+            <li><a href="/pt/sobre/">Sobre</a></li>
+            <li><a href="/pt/contacto/">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/pt/legal/privacidade/">Política de Privacidade</a></li>
+            <li><a href="/pt/legal/termos/">Termos de Utilização</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ORXU</span>
+        <div class="lang-switch">
+          <a href="/en/" lang="en">EN</a>
+          <a href="/pt/" aria-current="true" lang="pt">PT</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
 </body>
 </html>
