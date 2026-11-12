@@ -3,11 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=en/">
+  <meta http-equiv="refresh" content="0; url=/en/">
   <title>ORXU</title>
-  <link rel="canonical" href="https://orxu.com/en/">
+  <script>
+    // Prefer browser language when possible, otherwise English
+    (function () {
+      try {
+        var lang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+        if (lang.indexOf("pt") === 0) {
+          window.location.replace("/pt/");
+          return;
+        }
+      } catch (e) {}
+      window.location.replace("/en/");
+    })();
+  </script>
 </head>
 <body>
-  <p>Redirecting to <a href="en/">English version</a>...</p>
+  <p>Redirecting… <a href="/en/">English</a> · <a href="/pt/">Português</a></p>
 </body>
 </html>
