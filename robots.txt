@@ -1,3 +1,12 @@
+# ORXU institutional website
+#
+# Sitemap directive: use the absolute URL once the final public origin
+# is known (Cloudflare Pages default hostname or custom domain).
+# Example after domain is confirmed:
+#   Sitemap: https://YOUR-DOMAIN.example/sitemap.xml
+#
+# Until then, the relative path documents the intended location.
+
 User-agent: *
 Allow: /
 
