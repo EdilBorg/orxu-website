@@ -23,17 +23,19 @@ No definitive domain has been confirmed. Until the Cloudflare Pages hostname or 
 
 ---
 
-## 2. Logo asset (critical)
+## 2. Logo asset
 
-The file `assets/logo/orxu-mark.svg` is a **provisional geometric approximation**. It does **not** faithfully reproduce the official ORXU mark geometry or stroke structure provided by the rights holder.
+**Path:** `assets/logo/orxu-mark.svg`  
+**All 18 pages** reference this single path (header, footer, favicon).
 
-**Required before public brand presentation:**
+**Action required for byte-identical official mark:**  
+Replace `assets/logo/orxu-mark.svg` on GitHub with the exact official file you authorised (`WhatsApp-Image-2026-11-12-at-9.21.30-PM-vectorizely.svg`) via the GitHub web UI (Upload files → commit to `main`).  
+Do not open or re-export the SVG in an editor that rewrites paths.
 
-1. Supply the official logo in SVG (preferred) or high-resolution PNG with transparent background.
-2. Replace `assets/logo/orxu-mark.svg` (and any favicon derivative) with the official asset **without redrawing or reinterpreting** the mark.
-3. Keep colour consistent with the official artwork (measured dominant navy ≈ `#001938` / RGB 0,25,56 from the provided original).
+**Presentation CSS (already adjusted):**  
+`.logo-mark` uses `height: 2rem; width: auto` to fit the official portrait viewBox (`536 × 1200`) in the header without changing the SVG geometry.
 
-Until replacement, the current SVG must be treated as a layout placeholder only.
+**Colour note:** Official fills use `#001A39` / `#001D41` (consistent with the measured navy from the original artwork).
 
 ---
 
@@ -44,7 +46,7 @@ The Privacy Policy and Terms of Use are **general informational drafts**. They m
 Items that need explicit confirmation or review by the operator:
 
 - Whether hosting logs (IP, user-agent, paths) are retained and for how long under the chosen Cloudflare Pages plan / settings.
-- Whether any analytics, fonts-from-Google, or third-party scripts will be introduced after launch (currently Google Fonts Inter is loaded from Google; this should be acknowledged or self-hosted if preferred).
+- Whether Google Fonts (Inter) remains acceptable or should be self-hosted.
 - Any additional contact channels, legal entity name, or jurisdiction statements (none are claimed today).
 - Accuracy of the product external URLs and development-status wording as products evolve.
 
@@ -59,7 +61,7 @@ Do not invent entity registration, registered office, or data-controller identit
 3. Output directory: repository root (`/`).
 4. After first deploy, note the `*.pages.dev` URL (or custom domain).
 5. Update `sitemap.xml`, `robots.txt`, and optionally add canonical/hreflang as in section 1.
-6. Replace logo asset as in section 2.
+6. Ensure logo file is the exact official SVG (section 2).
 
 ---
 
