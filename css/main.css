@@ -1,0 +1,752 @@
+/* ==========================================================================
+   ORXU Institutional Website — Main Stylesheet
+   Premium Editorial Technology
+   Stack: HTML5 + CSS3 + Vanilla JS | Cloudflare Pages ready
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Institutional */
+  --orxu-blue: #001938;
+  --orxu-blue-dark: #000f24;
+  --orxu-blue-light: #e8eef5;
+  --orxu-blue-muted: #4a6a8a;
+
+  /* Neutrals */
+  --neutral-0: #ffffff;
+  --neutral-50: #f7f8fa;
+  --neutral-100: #eef0f4;
+  --neutral-200: #dce1e8;
+  --neutral-300: #c5cdd8;
+  --neutral-400: #9aa8b8;
+  --neutral-500: #6b7c90;
+  --neutral-600: #4a5a6c;
+  --neutral-700: #344050;
+  --neutral-800: #1f2a36;
+  --neutral-900: #121a24;
+  --neutral-950: #0a1018;
+
+  /* Functional */
+  --success: #1a7a4c;
+  --warning: #9a6b00;
+  --error: #b42318;
+  --info: #1a5f8a;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.625rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.25rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5rem;
+  --space-16: 8rem;
+
+  /* Layout */
+  --max-width: 72rem;
+  --header-h: 4.25rem;
+  --radius: 0.375rem;
+  --radius-lg: 0.75rem;
+
+  /* Motion */
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration: 180ms;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--neutral-800);
+  background: var(--neutral-0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg { display: block; max-width: 100%; height: auto; }
+
+a {
+  color: var(--orxu-blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  transition: color var(--duration) var(--ease);
+}
+a:hover { color: var(--orxu-blue-dark); }
+
+:focus-visible {
+  outline: 2px solid var(--orxu-blue);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 var(--space-4);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--neutral-900);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: var(--text-4xl); font-weight: 650; }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-xl); }
+
+p { margin: 0 0 var(--space-4); }
+
+ul, ol { margin: 0 0 var(--space-4); padding-left: 1.25em; }
+
+/* --------------------------------------------------------------------------
+   3. Layout Utilities
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .container { padding-inline: var(--space-8); }
+}
+
+.section {
+  padding-block: var(--space-12);
+}
+
+.section--tight {
+  padding-block: var(--space-10);
+}
+
+.section--muted {
+  background: var(--neutral-50);
+}
+
+/* --------------------------------------------------------------------------
+   4. Header & Navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .header-inner { padding-inline: var(--space-8); }
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--orxu-blue);
+}
+
+.logo-mark {
+  width: 1.75rem;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 1.125rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--orxu-blue);
+}
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+@media (min-width: 900px) {
+  .nav-desktop { display: flex; }
+}
+
+.nav-desktop a {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--neutral-700);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: color var(--duration) var(--ease), background var(--duration) var(--ease);
+}
+
+.nav-desktop a:hover,
+.nav-desktop a[aria-current="page"] {
+  color: var(--orxu-blue);
+  background: var(--orxu-blue-light);
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin-left: var(--space-3);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--neutral-200);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.lang-switch a {
+  padding: 0.2rem 0.4rem;
+  color: var(--neutral-500);
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+
+.lang-switch a:hover { color: var(--orxu-blue); }
+.lang-switch a[aria-current="true"] {
+  color: var(--orxu-blue);
+  font-weight: 600;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--orxu-blue);
+}
+
+@media (min-width: 900px) {
+  .menu-toggle { display: none; }
+}
+
+.menu-toggle svg { width: 1.5rem; height: 1.5rem; }
+
+/* Mobile nav panel */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  background: var(--neutral-0);
+  padding: var(--space-6) var(--space-5);
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.nav-mobile.is-open { display: block; }
+
+.nav-mobile a {
+  display: block;
+  padding: var(--space-3) 0;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--neutral-800);
+  text-decoration: none;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.nav-mobile a:hover,
+.nav-mobile a[aria-current="page"] {
+  color: var(--orxu-blue);
+}
+
+.nav-mobile .lang-switch {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  border: none;
+  gap: var(--space-3);
+}
+
+body.nav-open { overflow: hidden; }
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.7rem 1.35rem;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 550;
+  line-height: 1.2;
+  text-decoration: none;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--duration) var(--ease), color var(--duration) var(--ease), border-color var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: var(--orxu-blue);
+  color: var(--neutral-0);
+  border-color: var(--orxu-blue);
+}
+.btn--primary:hover {
+  background: var(--orxu-blue-dark);
+  border-color: var(--orxu-blue-dark);
+  color: var(--neutral-0);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--orxu-blue);
+  border-color: var(--neutral-300);
+}
+.btn--secondary:hover {
+  border-color: var(--orxu-blue);
+  background: var(--orxu-blue-light);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--orxu-blue);
+  border-color: transparent;
+  padding-inline: 0.5rem;
+}
+.btn--ghost:hover { background: var(--orxu-blue-light); }
+
+/* --------------------------------------------------------------------------
+   6. Hero
+   -------------------------------------------------------------------------- */
+.hero {
+  padding-block: var(--space-12) var(--space-10);
+}
+
+@media (min-width: 900px) {
+  .hero { padding-block: var(--space-16) var(--space-12); }
+}
+
+.hero__label {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orxu-blue-muted);
+}
+
+.hero__title {
+  max-width: 18ch;
+  margin-bottom: var(--space-5);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.hero__lead {
+  max-width: 38rem;
+  margin-bottom: var(--space-8);
+  font-size: var(--text-lg);
+  color: var(--neutral-600);
+  line-height: 1.6;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   7. Product Editorial Sections
+   -------------------------------------------------------------------------- */
+.product-block {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-10);
+  border-top: 1px solid var(--neutral-100);
+}
+
+@media (min-width: 800px) {
+  .product-block {
+    grid-template-columns: 1fr 1.15fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+  .product-block--reverse {
+    direction: rtl;
+  }
+  .product-block--reverse > * {
+    direction: ltr;
+  }
+}
+
+.product-block__meta {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orxu-blue-muted);
+  margin-bottom: var(--space-3);
+}
+
+.product-block__title {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-2xl);
+}
+
+.product-block__desc {
+  color: var(--neutral-600);
+  margin-bottom: var(--space-5);
+}
+
+.product-block__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: var(--space-5);
+  padding: 0.25rem 0.65rem;
+  font-size: var(--text-xs);
+  font-weight: 550;
+  color: var(--neutral-700);
+  background: var(--neutral-100);
+  border-radius: 999px;
+}
+
+.product-block__status::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--orxu-blue-muted);
+}
+
+.product-block__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   8. Page Header (inner pages)
+   -------------------------------------------------------------------------- */
+.page-header {
+  padding-block: var(--space-10) var(--space-6);
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.page-header__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orxu-blue-muted);
+  margin-bottom: var(--space-3);
+}
+
+.page-header__title {
+  margin-bottom: var(--space-3);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+}
+
+.page-header__lead {
+  max-width: 40rem;
+  color: var(--neutral-600);
+  font-size: var(--text-lg);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. Content
+   -------------------------------------------------------------------------- */
+.prose {
+  max-width: 42rem;
+}
+
+.prose h2 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.prose h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.prose p + p { margin-top: var(--space-4); }
+
+.prose ul, .prose ol {
+  margin-bottom: var(--space-5);
+}
+
+.prose li + li { margin-top: var(--space-2); }
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  font-size: var(--text-xs);
+  font-weight: 550;
+  color: var(--neutral-700);
+  background: var(--neutral-100);
+  border-radius: 999px;
+}
+
+.status-badge::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--orxu-blue-muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. Contact
+   -------------------------------------------------------------------------- */
+.contact-card {
+  max-width: 28rem;
+  padding: var(--space-6);
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-100);
+  border-radius: var(--radius-lg);
+}
+
+.contact-card__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  margin-bottom: var(--space-2);
+}
+
+.contact-card__value {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--orxu-blue);
+  text-decoration: none;
+}
+
+.contact-card__value:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  margin-top: var(--space-12);
+  padding-block: var(--space-10) var(--space-8);
+  background: var(--neutral-50);
+  border-top: 1px solid var(--neutral-100);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (min-width: 700px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: var(--space-10);
+  }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-brand .logo-link {
+  margin-bottom: var(--space-2);
+}
+
+.footer-brand p {
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+  max-width: 22rem;
+  margin: 0;
+}
+
+.footer-col h4 {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  margin-bottom: var(--space-4);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li + li { margin-top: var(--space-2); }
+
+.footer-col a {
+  font-size: var(--text-sm);
+  color: var(--neutral-700);
+  text-decoration: none;
+}
+
+.footer-col a:hover { color: var(--orxu-blue); }
+
+.footer-bottom {
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--neutral-200);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+  color: var(--neutral-500);
+}
+
+/* --------------------------------------------------------------------------
+   12. Legal
+   -------------------------------------------------------------------------- */
+.legal-content {
+  max-width: 42rem;
+  padding-block: var(--space-8);
+}
+
+.legal-content h2 {
+  margin-top: var(--space-8);
+  font-size: var(--text-xl);
+}
+
+.legal-content p,
+.legal-content li {
+  font-size: var(--text-sm);
+  color: var(--neutral-700);
+}
+
+.legal-note {
+  margin-top: var(--space-8);
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+  background: var(--neutral-50);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--neutral-300);
+}
+
+/* --------------------------------------------------------------------------
+   13. Utilities
+   -------------------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-muted { color: var(--neutral-600); }
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   14. Product list (overview page)
+   -------------------------------------------------------------------------- */
+.product-list {
+  display: grid;
+  gap: 0;
+}
+
+.product-list__item {
+  display: grid;
+  gap: var(--space-4);
+  padding-block: var(--space-8);
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+@media (min-width: 700px) {
+  .product-list__item {
+    grid-template-columns: 12rem 1fr auto;
+    align-items: baseline;
+    gap: var(--space-6);
+  }
+}
+
+.product-list__name {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--neutral-900);
+  text-decoration: none;
+}
+
+.product-list__name:hover { color: var(--orxu-blue); }
+
+.product-list__desc {
+  color: var(--neutral-600);
+  margin: 0;
+}
+
+.product-list__link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
