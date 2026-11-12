@@ -10,4 +10,12 @@
   <url><loc>/en/legal/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>/en/legal/terms/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>/pt/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>/pt/produtos/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>/pt/produtos/korvex/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/pt/produtos/maps-leads-finder/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/pt/produtos/bowis/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/pt/sobre/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/pt/contacto/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/pt/legal/privacidade/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>/pt/legal/termos/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
