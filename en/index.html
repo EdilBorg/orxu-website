@@ -4,11 +4,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ORXU — Software Product Portfolio</title>
-  <meta name="description" content="ORXU is an independent software product portfolio brand.">
-  <!-- Placeholder: full site implementation pending -->
+  <meta name="description" content="ORXU is an independent software product portfolio brand. Discover Korvex, Maps Leads Finder and BOWIS.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="ORXU — Software Product Portfolio">
+  <meta property="og:description" content="Independent software product portfolio brand. Korvex, Maps Leads Finder and BOWIS.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../assets/logo/orxu-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>ORXU</h1>
-  <p>Official institutional website — English version (placeholder).</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/en/" class="logo-link" aria-label="ORXU home">
+        <img src="../assets/logo/orxu-mark.svg" alt="" class="logo-mark" width="28" height="35">
+        <span class="logo-text">ORXU</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <a href="/en/" aria-current="page">Home</a>
+        <a href="/en/products/">Products</a>
+        <a href="/en/about/">About</a>
+        <a href="/en/contact/">Contact</a>
+        <div class="lang-switch" aria-label="Language">
+          <a href="/en/" aria-current="true" lang="en">EN</a>
+          <a href="/pt/" lang="pt">PT</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+    <a href="/en/" aria-current="page">Home</a>
+    <a href="/en/products/">Products</a>
+    <a href="/en/about/">About</a>
+    <a href="/en/contact/">Contact</a>
+    <div class="lang-switch">
+      <a href="/en/" aria-current="true" lang="en">English</a>
+      <a href="/pt/" lang="pt">Português</a>
+    </div>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero__label">Software Product Portfolio</p>
+        <h1 class="hero__title">Independent software products with clear purpose.</h1>
+        <p class="hero__lead">ORXU is the institutional home for a set of specialized software products. Each product maintains its own identity, direction and commercial strategy.</p>
+        <div class="hero__actions">
+          <a href="/en/products/" class="btn btn--primary">View products</a>
+          <a href="/en/about/" class="btn btn--secondary">About ORXU</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <h2 id="portfolio-heading" class="visually-hidden">Product portfolio</h2>
+        <article class="product-block">
+          <div>
+            <p class="product-block__meta">WhatsApp Automation</p>
+            <h3 class="product-block__title">Korvex</h3>
+            <p class="product-block__desc">Software focused on visual automation workflows, conversation management and WhatsApp integration, with AI-assisted functionality and a token-based usage model.</p>
+            <span class="product-block__status">In development</span>
+            <div class="product-block__actions">
+              <a href="/en/products/korvex/" class="btn btn--secondary">Learn more</a>
+              <a href="https://korvex-8.polsia.io" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Product site ↗</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-muted" style="font-size: var(--text-sm); max-width: 28rem;">Korvex is being developed as a practical tool for teams that need structured automation around WhatsApp conversations. Capabilities are evolving; not all planned features are currently available.</p>
+          </div>
+        </article>
+        <article class="product-block product-block--reverse">
+          <div>
+            <p class="product-block__meta">Lead Research</p>
+            <h3 class="product-block__title">Maps Leads Finder</h3>
+            <p class="product-block__desc">A business prospecting product for discovering and organizing business information by category and location, with filtering, multiple data sources and duplicate management.</p>
+            <span class="product-block__status">In development</span>
+            <div class="product-block__actions">
+              <a href="/en/products/maps-leads-finder/" class="btn btn--secondary">Learn more</a>
+              <a href="https://maps-leads-finder-saas.onrender.com" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Product site ↗</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-muted" style="font-size: var(--text-sm); max-width: 28rem;">Maps Leads Finder is intended for professionals and teams who need structured lead research. The product is still in development and is not presented as a fully launched commercial platform.</p>
+          </div>
+        </article>
+        <article class="product-block">
+          <div>
+            <p class="product-block__meta">Point of Sale & Commercial Management</p>
+            <h3 class="product-block__title">BOWIS</h3>
+            <p class="product-block__desc">A product directed at sales management, product and customer records, commercial operations and business reporting.</p>
+            <span class="product-block__status">Early development</span>
+            <div class="product-block__actions">
+              <a href="/en/products/bowis/" class="btn btn--secondary">Learn more</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-muted" style="font-size: var(--text-sm); max-width: 28rem;">BOWIS is in an early stage of development. An external product website has not yet been published.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section section--muted">
+      <div class="container">
+        <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Institutional contact</h2>
+        <p class="text-muted" style="max-width: 36rem; margin-bottom: var(--space-6);">For questions related to the ORXU portfolio or its products, you can reach us by email.</p>
+        <a href="/en/contact/" class="btn btn--primary">Contact</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/en/" class="logo-link">
+            <img src="../assets/logo/orxu-mark.svg" alt="" class="logo-mark" width="24" height="30">
+            <span class="logo-text">ORXU</span>
+          </a>
+          <p>Independent software product portfolio brand.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/products/">Products</a></li>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/en/legal/privacy/">Privacy Policy</a></li>
+            <li><a href="/en/legal/terms/">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ORXU</span>
+        <div class="lang-switch">
+          <a href="/en/" aria-current="true" lang="en">EN</a>
+          <a href="/pt/" lang="pt">PT</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
 </body>
 </html>
